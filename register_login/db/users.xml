@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<users> 
+  <user> 
+    <username>张三</username>  
+    <password>123456789</password> 
+  </user>  
+  <user> 
+    <username>李四</username>  
+    <password>123456789999</password> 
+  </user>  
+  <user> 
+    <username>宋代良</username>  
+    <password>147258369</password> 
+  </user>  
+  <user>
+    <username>葛阳</username>
+    <password>789</password>
+  </user>
+</users>
