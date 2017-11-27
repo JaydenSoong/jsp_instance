@@ -3,23 +3,20 @@ package com.jayden.user.dao;
 import com.jayden.user.domain.User;
 import com.jayden.utils.dom4j.Dom4jUtils;
 import org.dom4j.Document;
-import org.dom4j.DocumentException;
 import org.dom4j.Element;
 import org.dom4j.Node;
-import org.dom4j.io.SAXReader;
 
-import java.io.File;
 import java.util.List;
 
+/**
+ * 操作数据库，也就是 users.xml
+ */
 public class UserDao {
-    //private final File file = new File("db/users.xml");
-    private final String path = "db/users.xml";
+    private final String path = "F:\\jsp_instance\\register_login\\db\\users.xml";
 
     public void addUser(User user){
         // 得到 users.xml 的 document
         Document document = Dom4jUtils.getDocument(path);
-        //SAXReader reader = new SAXReader();
-        //Document document = reader.read(file);
         // 得到根节点
         Element root = document.getRootElement();
 
@@ -38,8 +35,6 @@ public class UserDao {
     public User findUser(String username){
         // 得到 users.xml 的 document
         Document document = Dom4jUtils.getDocument(path);
-        //SAXReader reader = new SAXReader();
-        //Document document = reader.read(file);
         // 得到所有的 username 节点
         List<Node> nodes = document.selectNodes("//username");
 
