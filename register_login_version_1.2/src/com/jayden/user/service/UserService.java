@@ -1,6 +1,7 @@
 package com.jayden.user.service;
 
 import com.jayden.user.dao.UserDao;
+import com.jayden.user.dao.UserDaoFactory;
 import com.jayden.user.domain.User;
 import com.jayden.user.exception.UserException;
 
@@ -8,8 +9,8 @@ import com.jayden.user.exception.UserException;
  * 服务类，真正的业务逻辑
  */
 public class UserService {
-    // 依赖于 UserDao 类
-    private UserDao userDao = new UserDao();
+    // 通过 UserDaoFactory 返回 实现了 UserDao 接口的对象。
+    private UserDao userDao = UserDaoFactory.getUserdao();
 
     /**
      * 注册方法，若数据库中没有给定用户的用户名，说明可以注册，调用 userDao 的添加用户方法，完成注册。
